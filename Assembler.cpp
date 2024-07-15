@@ -16,9 +16,7 @@ int main(void) {
 		while (std::getline(ifile, current_line)) {
 			std::istringstream iss(current_line);
 			std::string field;
-			while (std::getline(iss, field, ' ')) {
-				tokens.push_back(field);
-			}
+			while (std::getline(iss, field, ' ')) tokens.push_back(field);
 		}
 	}
 	ifile.close();
