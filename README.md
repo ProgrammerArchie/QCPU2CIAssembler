@@ -1,4 +1,4 @@
-# QCPU1Assembler
+# QCPU 2CI Assembler
 Hey! I'm ProgrammerArchie, also known as Best_Archer.
 This is a repository for an assembler written in C++ for the QCPU 2CI Instruction Set, a Minecraft Redstone CPU ISA created by
 QSmally.
