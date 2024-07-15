@@ -4,7 +4,7 @@
 #include <vector>
 #include <sstream>
 int main(void) {
-	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.2.3 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
+	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.2.4 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
 	std::string current_line;
 	std::cin >> current_line;
 	std::ifstream ifile(current_line);
@@ -210,7 +210,7 @@ int main(void) {
 			else if (tokens[i] == "address_stack_push") byte += 0b110;
 			else if (tokens[i] == "address_stack_pull") byte += 0b111;
 			else {
-				std::cout << "AN ERROR OCCURRED!\n";
+				std::cout << "ERROR: AN INVALID DMA INSTRUCTION IN FILE!\nINVALID INSTRUCTION: " << tokens[i] << '\n';
 				return 1;
 			}
 		}
