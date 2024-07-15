@@ -4,7 +4,7 @@
 #include <vector>
 #include <sstream>
 int main(void) {
-	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.2.2 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
+	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.2.3 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
 	std::string current_line;
 	std::cin >> current_line;
 	std::ifstream ifile(current_line);
@@ -13,10 +13,15 @@ int main(void) {
 	std::ofstream ofile(current_line);
 	std::vector<std::string> tokens;
 	while (!ifile.eof()) {
+		bool tmp;
 		while (std::getline(ifile, current_line)) {
-			std::istringstream iss(current_line);
-			std::string field;
-			while (std::getline(iss, field, ' ')) tokens.push_back(field);
+			tmp = false;
+			if(current_line[0] == '/' && current_line[1] == '/') tmp = true;
+			if(tmp == false){
+				std::istringstream iss(current_line);
+				std::string field;
+				while (std::getline(iss, field, ' ')) tokens.push_back(field);
+			}
 		}
 	}
 	ifile.close();
