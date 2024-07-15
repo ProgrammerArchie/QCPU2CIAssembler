@@ -12,8 +12,7 @@ int main(void) {
 	std::cin >> current_line;
 	std::ofstream ofile(current_line);
 	std::vector<std::string> tokens;
-	while (!ifile.eof()) {
-		bool tmp;
+	while (!ifile.eof()){
 		while (std::getline(ifile, current_line)) {
 			std::istringstream iss(current_line);
 			std::string field;
