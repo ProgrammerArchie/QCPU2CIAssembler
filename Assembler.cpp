@@ -15,12 +15,12 @@ int main(void) {
 	while (!ifile.eof()) {
 		bool tmp;
 		while (std::getline(ifile, current_line)) {
-			tmp = false;
-			if(current_line[0] == '/' && current_line[1] == '/') tmp = true;
-			if(tmp == false){
-				std::istringstream iss(current_line);
-				std::string field;
-				while (std::getline(iss, field, ' ')) tokens.push_back(field);
+			std::istringstream iss(current_line);
+			std::string field;
+			bool running = true;
+			while (std::getline(iss, field, ' ') && running == true){
+				if(tokens[i][0] == '/' && tokens[i][1] == '/') running = false;
+				else tokens.push_back(field);
 			}
 		}
 	}
