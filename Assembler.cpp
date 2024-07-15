@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <sstream>
 int main(void) {
 	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.1\n-------------------------\nEnter the input assembly file path.\n";
 	std::string current_line;
@@ -11,9 +12,14 @@ int main(void) {
 	std::cin >> current_line;
 	std::ofstream ofile(current_line);
 	std::vector<std::string> tokens;
-	while(!ifile.eof()){
-		std::getline(ifile, current_line, ' ');
-		tokens.push_back(current_line);
+	while (!ifile.eof()) {
+		while (std::getline(ifile, current_line)) {
+			std::istringstream iss(current_line);
+			std::string field;
+			while (std::getline(iss, field, ' ')) {
+				tokens.push_back(field);
+			}
+		}
 	}
 	ifile.close();
 	uint8_t byte = 0, bytes = 0;
