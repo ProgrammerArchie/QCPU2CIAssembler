@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 int main(void) {
-	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.0.1\n-------------------------\nEnter the input assembly file path.\n";
+	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.1\n-------------------------\nEnter the input assembly file path.\n";
 	std::string current_line;
 	std::cin >> current_line;
 	std::ifstream ifile(current_line);
