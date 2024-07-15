@@ -4,7 +4,7 @@
 #include <vector>
 #include <sstream>
 int main(void) {
-	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.2.4 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
+	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.2.5 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
 	std::string current_line;
 	std::cin >> current_line;
 	std::ifstream ifile(current_line);
@@ -36,7 +36,10 @@ int main(void) {
 			else if (tokens[i] == "RET") byte += 0b011;
 			else if (tokens[i] == "NTA") byte += 0b110;
 			else if (tokens[i] == "PCM") byte += 0b111;
-			else byte += 0b100;
+			else {
+				byte += 0b100;
+				std::cout << "WARNING: THE MSC INSTRUCTION YOU SELECTED DOES NOT CORRESPOND WITH ANY NAMED MSC INSTRUCTION.\nTHE MSC INSTRUCTION YOU SELECTED: " << tokens[i] << '\n';
+			}
 		}
 		else if (tokens[i] == "DPS") { 
 			byte = 0b00001000;
