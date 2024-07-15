@@ -4,7 +4,7 @@
 #include <vector>
 #include <sstream>
 int main(void) {
-	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.2.5 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
+	std::cout << "QCPU 2CI Assembler\nBy Best_Archer\nVersion 1.2.5 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
 	std::string current_line;
 	std::cin >> current_line;
 	std::ifstream ifile(current_line);
