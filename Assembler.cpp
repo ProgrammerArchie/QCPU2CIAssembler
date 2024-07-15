@@ -35,7 +35,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "DPS") { 
 			byte = 0b00001000;
-			if(std::stoi(tokens[++i]) > 0b111) {
+			if(std::stoi(tokens[++i]) > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'DPS [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			} 
@@ -43,7 +43,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "PRF"){
 			byte = 0b00010000;
-			if(std::stoi(tokens[++i]) > 0b111) {
+			if(std::stoi(tokens[++i]) > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'PRF [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -52,7 +52,7 @@ int main(void) {
 		else if (tokens[i] == "IMM") {
 			bytes = 2;
 			byte = 0b00011000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'IMM [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -60,7 +60,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "XCH") { 
 			byte = 0b00100000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'XCH [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -68,14 +68,14 @@ int main(void) {
 		}
 		else if (tokens[i] == "AST") {
 			byte = 0b00101000 + (0b00111 & std::stoi(tokens[++i]));
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'AST [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			else byte += std::stoi(tokens[i]);	
 		}
 		else if (tokens[i] == "RST"){
 			byte = 0b00110000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'RST [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -83,7 +83,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "INC"){
 			byte = 0b00111000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'INC [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -91,7 +91,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "DEC"){
 			byte = 0b01000000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'DEC [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -99,7 +99,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "NEG"){
 			byte = 0b01001000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'NEG [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -107,7 +107,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "RSH"){
 			byte = 0b01010000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'RSH [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -115,7 +115,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "ADD"){
 			byte = 0b01011000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'ADD [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -123,7 +123,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "SUB"){
 			byte = 0b01100000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'SUB [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -131,7 +131,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "IOR"){
 			byte = 0b01101000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'IOR [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -139,7 +139,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "AND"){
 			byte = 0b01110000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'AND [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -147,7 +147,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "XOR"){
 			byte = 0b01111000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'XOR [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -155,7 +155,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "BSL"){
 			byte = 0b10000000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BSL [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -163,7 +163,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "BPL"){
 			byte = 0b10001000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BPL [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -171,7 +171,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "BSR"){
 			byte = 0b10010000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BSR [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -179,7 +179,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "BPR"){
 			byte = 0b10011000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BPR [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -187,7 +187,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "ENT"){
 			byte = 0b10100000;
-			if(std::stoi(tokens[++i] > 0b11111) {
+			if(std::stoi(tokens[++i] > 0b11111)) {
 				byte += 0b11111;
 				std::cout << "WARNING: 'ENT [num]' <- [num] > 31, [num] ROUNDED DOWN TO 31.\n";
 			}
@@ -210,7 +210,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "PRT") {
 			byte = 0b10101000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'PRT [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -219,7 +219,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "BRH") {
 			byte = 0b10110000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BRH [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -228,7 +228,7 @@ int main(void) {
 		}
 		else if (tokens[i] == "JMP") {
 			byte = 0b10111000;
-			if(std::stoi(tokens[++i] > 0b111) {
+			if(std::stoi(tokens[++i] > 0b111)) {
 				byte += 0b111;
 				std::cout << "WARNING: 'JMP [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
@@ -237,20 +237,20 @@ int main(void) {
 		}
 		else if (tokens[i] == "MST") {
 			byte = 0b11000000;
-			if(std::stoi(tokens[++i] > 0b1111) {
+			if(std::stoi(tokens[++i] > 0b1111)) {
 				byte += 0b1111;
 				std::cout << "WARNING: 'MST [num]' <- [num] > 15, [num] ROUNDED DOWN TO 15.\n";
 			}
-			else byte += std::stoi(tokens[i]);
+			else byte += std::stoi(tokens[i]));
 			bytes = 2;
 		}
 		else if (tokens[i] == "MLD") {
 			byte = 0b11110000;
-			if(std::stoi(tokens[++i] > 0b1111) {
+			if(std::stoi(tokens[++i] > 0b1111)) {
 				byte += 0b1111;
 				std::cout << "WARNING: 'MLD [num]' <- [num] > 15, [num] ROUNDED DOWN TO 15.\n";
 			}
-			else byte += std::stoi(tokens[i]);
+			else byte += std::stoi(tokens[i]));
 			bytes = 2;
 		}
 		else if (tokens[i] == "CLR") byte = 0b00101000;
