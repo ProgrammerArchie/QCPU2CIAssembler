@@ -16,7 +16,6 @@ int main(void) {
 		tokens.push_back(current_line);
 	}
 	ifile.close();
-	delete(&current_line);
 	uint8_t byte = 0, bytes = 0;
 	for (unsigned i = 0; i < tokens.size(); ++i) {
 		bytes = 1;
@@ -100,6 +99,16 @@ int main(void) {
 			byte = 0b11110000 + (0b01111 & std::stoi(tokens[++i]));
 			bytes = 2;
 		}
+		else if (tokens[i] == "CLR") byte = 0b00101000;
+		else if (tokens[i] == "FWD") byte = 0b00110000;
+		else if (tokens[i] == "LCK") byte = 0b01001000;
+		else if (tokens[i] == "ULK") byte = 0b01010000;
+		else if (tokens[i] == "END") byte = 0b01011000;
+		else if (tokens[i] == "TER") byte = 0b01100000;
+		else if (tokens[i] == "LRT") byte = 0b01101000;
+		else if (tokens[i] == "NOP") byte = 0b01111000;
+		else if (tokens[i] == "JMP(A)") byte = 0b10000000;
+		else if (tokens[i] == "CAL(A)") byte = 0b10001000;
 		else {
 			std::cout << "AN ERROR OCCURRED!";
 			return 1;
