@@ -26,24 +26,12 @@ int main(void) {
 		if (tokens[i] == "MSC") {
 			byte = 0;
 			if (tokens[++i] == "DPI") bytes = 2;
-			else if (tokens[i] == "DPL") {
-				byte += 0b001;
-			}
-			else if (tokens[i] == "DPK") {
-				byte += 0b010;
-			}
-			else if (tokens[i] == "RET") {
-				byte += 0b011;
-			}
-			else if (tokens[i] == "NTA") {
-				byte += 0b110;
-			}
-			else if (tokens[i] == "PCM") {
-				byte += 0b111;
-			}
-			else {
-				byte += 0b100;
-			}
+			else if (tokens[i] == "DPL") byte += 0b001;
+			else if (tokens[i] == "DPK") byte += 0b010;
+			else if (tokens[i] == "RET") byte += 0b011;
+			else if (tokens[i] == "NTA") byte += 0b110;
+			else if (tokens[i] == "PCM") byte += 0b111;
+			else byte += 0b100;
 		}
 		else if (tokens[i] == "DPS") byte = 0b00001000 + (0b00111 & std::stoi(tokens[++i]));
 		else if (tokens[i] == "PRF") byte = 0b00010000 + (0b00111 & std::stoi(tokens[++i]));
