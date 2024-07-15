@@ -19,7 +19,7 @@ int main(void) {
 			std::string field;
 			bool running = true;
 			while (std::getline(iss, field, ' ') && running == true){
-				if(tokens[i][0] == '/' && tokens[i][1] == '/') running = false;
+				if(field[0] == '/' && field[1] == '/') running = false;
 				else tokens.push_back(field);
 			}
 		}
