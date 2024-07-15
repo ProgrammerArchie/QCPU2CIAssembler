@@ -58,7 +58,7 @@ int main(void) {
 		else if (tokens[i] == "ENT") byte = 0b10100000 + (0b11111 & std::stoi(tokens[++i]));
 		else if (tokens[i] == "DMA") {
 			byte = 0b11000000;
-			if (tokens[i] == "execute");
+			if (tokens[++i] == "execute");
 			else if (tokens[i] == "map_config") byte += 0b001;
 			else if (tokens[i] == "map_physical") byte += 0b010;
 			else if (tokens[i] == "map_restore") byte += 0b011;
