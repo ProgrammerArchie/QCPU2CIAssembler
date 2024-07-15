@@ -4,7 +4,7 @@
 #include <vector>
 #include <sstream>
 int main(void) {
-	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.1.1\n-------------------------\nEnter the input assembly file path.\n";
+	std::cout << "QCPU 1 Assembler\nBy Best_Archer\nVersion 1.1.2\n-------------------------\nEnter the input assembly file path.\n";
 	std::string current_line;
 	std::cin >> current_line;
 	std::ifstream ifile(current_line);
@@ -81,7 +81,7 @@ int main(void) {
 			else if (tokens[i] == "address_stack_push") byte += 0b110;
 			else if (tokens[i] == "address_stack_pull") byte += 0b111;
 			else {
-				std::cout << "AN ERROR OCCURRED!";
+				std::cout << "AN ERROR OCCURRED!\n";
 				return 1;
 			}
 		}
@@ -116,7 +116,7 @@ int main(void) {
 		else if (tokens[i] == "JMP(A)") byte = 0b10000000;
 		else if (tokens[i] == "CAL(A)") byte = 0b10001000;
 		else {
-			std::cout << "AN ERROR OCCURRED!";
+			std::cout << "AN ERROR OCCURRED!\n";
 			return 1;
 		}
 		ofile << byte;
