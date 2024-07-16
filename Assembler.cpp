@@ -282,7 +282,7 @@ int main(void) {
 		}
 	}
 	ofile.close();
-	std::cout << "Press any key and enter to close the program.\n";
+	std::cout << "Press any key to close the program.\n";
 	std::cin.ignore();
 	return 0;
 }
