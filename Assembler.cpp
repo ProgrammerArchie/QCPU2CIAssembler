@@ -12,13 +12,13 @@ int main(void) {
 	std::cin >> current_line;
 	std::ofstream ofile(current_line);
 	std::vector<std::string> tokens;
-	while (!ifile.eof()){
+	while (!ifile.eof()) {
 		while (std::getline(ifile, current_line)) {
 			std::istringstream iss(current_line);
 			std::string field;
 			bool running = true;
-			while (std::getline(iss, field, ' ') && running == true){
-				if(field[0] == '/' && field[1] == '/') running = false;
+			while (std::getline(iss, field, ' ') && running == true) {
+				if (field[0] == '/' && field[1] == '/') running = false;
 				else tokens.push_back(field);
 			}
 		}
@@ -40,166 +40,166 @@ int main(void) {
 				std::cout << "WARNING: THE MSC INSTRUCTION YOU SELECTED DOES NOT CORRESPOND WITH ANY NAMED MSC INSTRUCTION.\nTHE MSC INSTRUCTION YOU SELECTED: " << tokens[i] << '\n';
 			}
 		}
-		else if (tokens[i] == "DPS") { 
+		else if (tokens[i] == "DPS") {
 			byte = 0b00001000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'DPS [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
-			} 
-			else byte += std::stoul(tokens[i]);
+			}
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "PRF"){
+		else if (tokens[i] == "PRF") {
 			byte = 0b00010000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'PRF [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
 		else if (tokens[i] == "IMM") {
 			bytes = 2;
 			byte = 0b00011000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'IMM [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "XCH") { 
+		else if (tokens[i] == "XCH") {
 			byte = 0b00100000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'XCH [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
 		else if (tokens[i] == "AST") {
 			byte = 0b00101000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'AST [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);	
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "RST"){
+		else if (tokens[i] == "RST") {
 			byte = 0b00110000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'RST [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "INC"){
+		else if (tokens[i] == "INC") {
 			byte = 0b00111000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'INC [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "DEC"){
+		else if (tokens[i] == "DEC") {
 			byte = 0b01000000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'DEC [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "NEG"){
+		else if (tokens[i] == "NEG") {
 			byte = 0b01001000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'NEG [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "RSH"){
+		else if (tokens[i] == "RSH") {
 			byte = 0b01010000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'RSH [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "ADD"){
+		else if (tokens[i] == "ADD") {
 			byte = 0b01011000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'ADD [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "SUB"){
+		else if (tokens[i] == "SUB") {
 			byte = 0b01100000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'SUB [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "IOR"){
+		else if (tokens[i] == "IOR") {
 			byte = 0b01101000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'IOR [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "AND"){
+		else if (tokens[i] == "AND") {
 			byte = 0b01110000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'AND [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "XOR"){
+		else if (tokens[i] == "XOR") {
 			byte = 0b01111000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'XOR [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "BSL"){
+		else if (tokens[i] == "BSL") {
 			byte = 0b10000000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BSL [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "BPL"){
+		else if (tokens[i] == "BPL") {
 			byte = 0b10001000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BPL [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "BSR"){
+		else if (tokens[i] == "BSR") {
 			byte = 0b10010000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BSR [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "BPR"){
+		else if (tokens[i] == "BPR") {
 			byte = 0b10011000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BPR [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
-		else if (tokens[i] == "ENT"){
+		else if (tokens[i] == "ENT") {
 			byte = 0b10100000;
-			if(std::stoul(tokens[++i]) > 0b11111) {
+			if (std::stoul(tokens[++i]) > 0b11111) {
 				byte += 0b11111;
 				std::cout << "WARNING: 'ENT [num]' <- [num] > 31, [num] ROUNDED DOWN TO 31.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 		}
 		else if (tokens[i] == "DMA") {
 			byte = 0b11000000;
@@ -218,47 +218,47 @@ int main(void) {
 		}
 		else if (tokens[i] == "PRT") {
 			byte = 0b10101000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'PRT [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 			bytes = 2;
 		}
 		else if (tokens[i] == "BRH") {
 			byte = 0b10110000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'BRH [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 			bytes = 2;
 		}
 		else if (tokens[i] == "JMP") {
 			byte = 0b10111000;
-			if(std::stoul(tokens[++i]) > 0b111) {
+			if (std::stoul(tokens[++i]) > 0b111) {
 				byte += 0b111;
 				std::cout << "WARNING: 'JMP [num]' <- [num] > 7, [num] ROUNDED DOWN TO 7.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 			bytes = 2;
 		}
 		else if (tokens[i] == "MST") {
 			byte = 0b11000000;
-			if(std::stoul(tokens[++i]) > 0b1111) {
+			if (std::stoul(tokens[++i]) > 0b1111) {
 				byte += 0b1111;
 				std::cout << "WARNING: 'MST [num]' <- [num] > 15, [num] ROUNDED DOWN TO 15.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 			bytes = 2;
 		}
 		else if (tokens[i] == "MLD") {
 			byte = 0b11110000;
-			if(std::stoul(tokens[++i]) > 0b1111) {
+			if (std::stoul(tokens[++i]) > 0b1111) {
 				byte += 0b1111;
 				std::cout << "WARNING: 'MLD [num]' <- [num] > 15, [num] ROUNDED DOWN TO 15.\n";
 			}
-			else byte += std::stoul(tokens[i]);
+			else byte += (uint8_t) std::stoul(tokens[i]);
 			bytes = 2;
 		}
 		else if (tokens[i] == "CLR") byte = 0b00101000;
@@ -277,7 +277,7 @@ int main(void) {
 		}
 		ofile << byte;
 		if (bytes > 1) {
-			byte = 0xff & std::stoul(tokens[++i]);
+			byte = 0xff & (uint8_t) std::stoul(tokens[++i]);
 			ofile << byte;
 		}
 	}
