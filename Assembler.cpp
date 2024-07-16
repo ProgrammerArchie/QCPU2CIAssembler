@@ -12,15 +12,13 @@ int main(void) {
 	std::getline(std::cin, current_line);
 	std::ofstream ofile(current_line);
 	std::vector<std::string> tokens;
-	while (!ifile.eof()) {
-		while (std::getline(ifile, current_line)) {
-			std::istringstream iss(current_line);
-			std::string field;
-			bool running = true;
-			while (std::getline(iss, field, ' ') && running == true) {
-				if (field[0] == '/' && field[1] == '/') running = false;
-				else tokens.push_back(field);
-			}
+	while (std::getline(ifile, current_line)) {
+		std::istringstream iss(current_line);
+		std::string field;
+		bool running = true;
+		while (std::getline(iss, field, ' ') && running == true) {
+			if (field[0] == '/' && field[1] == '/') running = false;
+			else tokens.push_back(field);
 		}
 	}
 	ifile.close();
