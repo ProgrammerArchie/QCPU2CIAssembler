@@ -4,7 +4,7 @@
 #include <vector>
 #include <sstream>
 int main(void) {
-	std::cout << "QCPU 2CI Assembler\nBy Best_Archer\nVersion 1.2.6 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
+	std::cout << "QCPU 2CI Assembler\nBy Best_Archer\nVersion 1.2.7 \"Artificer\"\n-------------------------\nEnter the input assembly file path.\n";
 	std::string current_line;
 	std::getline(std::cin, current_line);
 	std::ifstream ifile(current_line);
@@ -17,7 +17,7 @@ int main(void) {
 		std::string field;
 		bool running = true;
 		while (std::getline(iss, field, ' ') && running == true) {
-			if (field[0] == '/' && field[1] == '/') running = false;
+			if (field[0] == '/' == field[1]) running = false;
 			else tokens.push_back(field);
 		}
 	}
